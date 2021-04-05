@@ -10,5 +10,35 @@
     "description": "Descrição...",
     "link": "e-commerce-pokemon.vercel.app",
     "github": "https://github.com/thomas-soares/e-commerce-pokemon"
-  }  
+  }
+
+
+  ,
+  {
+    "name": "Produtos financeios Sicredi",
+    "description": "Descrição...",
+    "link": "Link...",
+    "github": "Github..."
+  }
+  ,
+  {
+    "name": "Gerdau",
+    "description": "Descrição...",
+    "link": "Link...",
+    "github": "Github..."
+  }
+  ,
+  {
+    "name": "Profuse",
+    "description": "Descrição...",
+    "link": "Link...",
+    "github": "Github..."
+  }
+  ,
+  {
+    "name": "Cuponagens...",
+    "description": "Descrição...",
+    "link": "Link...",
+    "github": "Github..."
+  }
 ]
