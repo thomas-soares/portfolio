@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Thomas Soares</h1>
+        {/* <h1 className={styles.title}>Thomas Soares</h1> */}
         <p>
           Como desenvolvedor front-end, trabalho em conjunto com outros membros
           do time de desenvolvimento, incluindo designers e desenvolvedores
