@@ -20,7 +20,7 @@ export default function Home() {
           Styled Components, Jest, entre outras.
         </p>
 
-        <p>
+        {/* <p>
           Dentro de um time ágil, sigo rotinas Scrum que incluem reuniões
           diárias de stand-up, planejamento de sprint, revisão de sprint e
           retrospectiva. Trabalho em estreita colaboração com outros membros do
@@ -35,7 +35,7 @@ export default function Home() {
           membros do time de desenvolvimento para atender às necessidades do
           usuário e seguindo rotinas Scrum para garantir a entrega do produto de
           forma ágil e eficiente.
-        </p>
+        </p> */}
       </main>
 
       <footer className={styles.footer}>
