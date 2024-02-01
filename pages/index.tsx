@@ -10,15 +10,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Thomas Soares</h1>
-        <p>
+        {/* <h1 className={styles.title}>Thomas Soares</h1> */}
+        {/* <p>
           Como desenvolvedor front-end, trabalho em conjunto com outros membros
           do time de desenvolvimento, incluindo designers e desenvolvedores
           back-end, para criar interfaces de usuário atraentes e funcionais para
           aplicativos da web. Utilizo tecnologias HTML, CSS, Javascript,
           Typescript, React, Next.js, React Native, Graphql, Node.js, Redux,
           Styled Components, Jest, entre outras.
-        </p>
+        </p> */}
 
         <p>
           Dentro de um time ágil, sigo rotinas Scrum que incluem reuniões
