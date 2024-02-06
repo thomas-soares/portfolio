@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Thomas Soares</h1>
-        {/* <p>
+        <p>
           Como desenvolvedor front-end, trabalho em conjunto com outros membros
           do time de desenvolvimento, incluindo designers e desenvolvedores
           back-end, para criar interfaces de usuário atraentes e funcionais para
@@ -35,7 +35,7 @@ export default function Home() {
           membros do time de desenvolvimento para atender às necessidades do
           usuário e seguindo rotinas Scrum para garantir a entrega do produto de
           forma ágil e eficiente.
-        </p> */}
+        </p>
       </main>
 
       <footer className={styles.footer}>
