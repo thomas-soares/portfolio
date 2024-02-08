@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <main className={styles.main}>
+      <main className={styles.main}>
         <h1 className={styles.title}>Thomas Soares</h1>
         <p>
           Como desenvolvedor front-end, trabalho em conjunto com outros membros
@@ -36,7 +36,7 @@ export default function Home() {
           usuário e seguindo rotinas Scrum para garantir a entrega do produto de
           forma ágil e eficiente.
         </p>
-      </main> */}
+      </main>
 
       <footer className={styles.footer}>
         <a
