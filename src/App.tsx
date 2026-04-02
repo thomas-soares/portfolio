@@ -5,7 +5,7 @@ function App() {
     <>
       <header>
         <h1>Thomas Soares</h1>
-        <p>Desenvolvedor Front-end na Leega</p>
+        <p>Desenvolvedor Front-end na Nexperti</p>
         <p>Javascript • Typescript • React • Next.js • Node.js • NestJS</p>
       </header>
 
@@ -27,7 +27,7 @@ function App() {
             iteração.
           </p>
           <p>
-            Com mais de 11 anos de experiência, desenvolvo interfaces com foco
+            Com mais de 12 anos de experiência, desenvolvo interfaces com foco
             em React e trabalho em equipes multidisciplinares para entregar
             produtos de forma ágil e eficiente. 🚀
           </p>
@@ -37,9 +37,45 @@ function App() {
           <h2>Experiência</h2>
 
           <article>
+            <h3>
+              Nexperti — Desenvolvedor Frontend Senior | React.js | Next.js |
+              NestJS | TypeScript
+            </h3>
+            <p>
+              <strong>novembro de 2024 - até o momento</strong>
+            </p>
+            <p>
+              Atuação como Desenvolvedor Frontend Sênior em um sistema
+              financeiro multi-tenant para gestão e controle de notas fiscais,
+              atendendo múltiplos clientes corporativos.
+            </p>
+            <p>
+              Responsável pela arquitetura, desenvolvimento e evolução do
+              frontend utilizando React, Next.js e TypeScript, com integração a
+              NestJS e Protheus (TOTVS).
+            </p>
+            <p>
+              Criação de Design System próprio com Storybook, padronização de
+              componentes reutilizáveis e foco em acessibilidade e
+              escalabilidade.
+            </p>
+            <p>
+              Implementação de testes unitários, integração e E2E, além de
+              práticas de observabilidade, monitoramento e rastreamento de
+              erros.
+            </p>
+            <p>
+              Otimizações contínuas de performance e Web Core Vitals (code
+              splitting, lazy loading, cache estratégico), garantindo alta
+              confiabilidade e experiência do usuário em ambiente crítico de
+              negócio.
+            </p>
+          </article>
+
+          <article>
             <h3>Leega — Desenvolvedor Front-end</h3>
             <p>
-              <strong>outubro de 2024 - outubro de 2025</strong>
+              <strong>outubro de 2024 - novembro de 2025</strong>
             </p>
             <p>
               Atuei em um projeto do setor financeiro, migrando uma aplicação de
