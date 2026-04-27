@@ -1,267 +1,347 @@
-import Image from "next/image";
+import { Briefcase, GraduationCap, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <>
-        <header>
-          <h1>Thomas Soares</h1>
-          <p>Desenvolvedor Front-end na Nexperti</p>
-          <p>Javascript • Typescript • React • Next.js • Node.js • NestJS</p>
-        </header>
+    <main className="min-h-screen bg-slate-50 pb-16 pt-10 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+        <section className="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="space-y-5">
+              <div className="inline-flex flex-wrap items-center gap-3 rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 dark:bg-slate-50 dark:text-slate-950">
+                Front-end Senior • Next.js • UI Design
+              </div>
+              <div className="space-y-4">
+                <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                  Thomas Soares
+                </h1>
+                <p className="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
+                  Desenvolvedor front-end com mais de 12 anos de experiência em
+                  React, Next.js e design de sistemas escaláveis. Entrego
+                  interfaces modernas com foco em usabilidade, performance e
+                  acessibilidade.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="default">Entrar em contato</Button>
+                <Button variant="secondary">Ver experiência</Button>
+              </div>
+            </div>
 
-        <main>
-          <section>
-            <h2>Resumo</h2>
-            <p>
-              Como desenvolvedor front-end, trabalho em conjunto com designers e
-              desenvolvedores back-end para criar interfaces de usuário
-              atraentes e funcionais para aplicativos da web. Utilizo
-              tecnologias como HTML, CSS, Javascript, Typescript, React,
-              Next.js, React Native, Graphql, Node.js, Zustand, Redux, Tailwind
-              CSS, Styled Components, Jest, entre outras.
+            <div className="rounded-[2rem] bg-slate-950/90 px-6 py-8 text-white shadow-xl shadow-slate-950/20 dark:bg-slate-900/95">
+              <p className="text-sm uppercase tracking-[0.28em] text-slate-400">
+                Especialidades
+              </p>
+              <div className="mt-6 grid gap-2 text-sm leading-6 text-slate-200">
+                <span>React • Next.js • TypeScript</span>
+                <span>Tailwind CSS • Design System</span>
+                <span>Performance • Acessibilidade</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Sparkles className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+                  <CardTitle>Resumo Profissional</CardTitle>
+                </div>
+                <CardDescription>
+                  Visão geral do perfil e do estilo de trabalho.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4 text-slate-700 dark:text-slate-300">
+                <p>
+                  Como desenvolvedor front-end, trabalho em conjunto com outros
+                  membros do time de desenvolvimento, incluindo designers e
+                  desenvolvedores back-end, para criar interfaces de usuário
+                  atraentes e funcionais para aplicativos da web. Utilizo
+                  tecnologias HTML, CSS, Javascript, Typescript, React, Next.js,
+                  React Native, Graphql, Node.js, Zustand, Redux, Tailwind CSS,
+                  Styled Components, Jest, entre outras.
+                </p>
+                <p>
+                  Dentro de um time ágil, sigo rotinas Scrum que incluem
+                  reuniões diárias de stand-up, planejamento de sprint, revisão
+                  de sprint e retrospectiva. Trabalho em estreita colaboração
+                  com outros membros do time para garantir que os requisitos do
+                  usuário sejam atendidos em cada iteração.
+                </p>
+                <p>
+                  Em resumo, como desenvolvedor front-end com mais de 11 anos de
+                  experiência, meu trabalho inclui desenvolver interfaces de
+                  usuário usando tecnologias como React, trabalhando em
+                  colaboração com outros membros do time de desenvolvimento para
+                  atender às necessidades do usuário e seguindo rotinas Scrum
+                  para garantir a entrega do produto de forma ágil e eficiente.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="space-y-6">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Briefcase className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+                  <CardTitle>Experiência</CardTitle>
+                </div>
+                <CardDescription>
+                  Projetos mais recentes e principais responsabilidades.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">Nexperti</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Frontend Senior | React.js | Next.js | NestJS
+                    | TypeScript
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    novembro de 2025 - Present (6 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Atuação como Desenvolvedor Frontend Sênior em um sistema
+                    financeiro multi-tenant para gestão e controle de notas
+                    fiscais, atendendo múltiplos clientes corporativos.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Responsável pela arquitetura, desenvolvimento e evolução do
+                    frontend utilizando React, Next.js e TypeScript, com
+                    integração a NestJS e Protheus (TOTVS).
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Criação de Design System próprio com Storybook, padronização
+                    de componentes reutilizáveis e foco em acessibilidade e
+                    escalabilidade.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Implementação de testes unitários, integração e E2E, além de
+                    práticas de observabilidade, monitoramento e rastreamento de
+                    erros.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Otimizações contínuas de performance e Web Core Vitals (code
+                    splitting, lazy loading, cache estratégico), garantindo alta
+                    confiabilidade e experiência do usuário em ambiente crítico
+                    de negócio.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">Leega</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    outubro de 2024 - novembro de 2025 (1 ano 2 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Trabalhei como desenvolvedor Front-end em um projeto para um
+                    cliente do setor financeiro, focado na migração de uma
+                    aplicação de internet banking originalmente feita em Flutter
+                    Web. Desenvolvemos também o Design System, de acordo com o
+                    que foi proposto através do Figma. O sistema foi reescrito
+                    utilizando tecnologias modernas, incluindo: React, Vite,
+                    Tailwind CSS, Zustand, Storybook, Jest, TanStack Query
+                    (React Query), ESLint e Prettier.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">IBM</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    maio de 2023 - setembro de 2024 (1 ano 5 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Atuei como outsourcing para um cliente do ramo de petróleo e
+                    gás, trabalhando na migração de um sistema legado em ASP
+                    para uma solução moderna em Angular, foi utilizado Angular
+                    Material, back-end foi desenvolvido em .NET e o
+                    gerenciamento de dados é feito no Oracle utilizando Dapper e
+                    Entity Framework. Além disso, segui estudando React e
+                    Next.js, que são as tecnologia em que sou mais
+                    especializado.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">CI&T</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    julho de 2022 - maio de 2023 (11 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Trabalhava como outsourcing para um cliente do ramo
+                    farmacêutico, atuava em um projeto de e-commerce feito em
+                    Next.js e no app das duas marcas do cliente que foi feito em
+                    React Native, utilizavamos também Typescript, React,
+                    Next.js, React Native, Graphql, Node.js, Redux, Styled
+                    Components, Jest, além de outras tecnologias.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">americanas s.a.</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    abril de 2021 - julho de 2022 (1 ano 4 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Atuava em um time com outros desenvolvedores front-end,
+                    trabalhando na marca Americanas Empresas, desenvolviamos
+                    novas features além de modernizar as soluções que já
+                    existiam no e-commerce que foi desenvolvido com tecnologias
+                    como Typescript, React, Next.js, Node.js, Redux, Styled
+                    Components, Jest, GraphQL, entre outras.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">Huia</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    agosto de 2018 - abril de 2021 (2 anos 9 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Trabalhei no desenvolvimento front-end de plugins para
+                    DjangoCMS, atuando com metodologia ágil, rodando scrum em
+                    times compostos por Product Owner, Scrum Master e
+                    desenvolvedores, trabalhamos com tecnologias como Django,
+                    DjangoCMS, SASS, REST, Docker, Git, Gitlab e Micro serviços.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Também já trabalhei anteriormente em projetos que utilizavam
+                    diversas tecnologias como Drupal 8, Wordpress, Laravel,
+                    Lumen, Embedded JavaScript templating, Jenkins, Gulp, Grunt,
+                    NPM, Yarn, HTML, CSS, Javascript, Jquery, MySql, SQLite,
+                    PHP, Python.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Além disso, estive estudando ReactJS e React Native para
+                    estar apto a assumir projetos nessas tecnologias.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">
+                    Zeta Informática Ltda.
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    julho de 2017 - agosto de 2018 (1 ano 2 meses)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Atuei na versão web de um sistema legado, esse sistema é
+                    desenvolvido em NodeJS e AngularJS, além de outras
+                    dependências que visam facilitar o desenvolvimento e/ou a
+                    implementação de funcionalidades. Trabalhei conforme
+                    necessário em um site com diversos indicadores para os
+                    nossos clientes que utilizam o ERP que foi desenvolvido em
+                    Ruby.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Trabalhei brevemente no desenvolvimento da emissão de novos
+                    documentos eletrônicos como MDFE (manifesto de documento
+                    eletrônico) e CTE (conhecimento de transporte) por
+                    integrador do ERP desenvolvido em Java.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">Huia</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Desenvolvedor Front-end
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    março de 2015 - fevereiro de 2017 (2 anos)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Tecnologias que tive contato: HTML, CSS, SASS, LESS, Stylus,
+                    Bootstrap 3, Foundation, BEM (Block, Element, Modifier),
+                    Javascript, Jquery, Gulp, Grunt, Backbone, PHP, Kohana,
+                    Wordpress, C#, .Net, SQL Server, MySQL, Jenkins, Composer,
+                    NPM, Bower, GIT.
+                  </p>
+                </article>
+
+                <article className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                  <h3 className="text-lg font-semibold">Ferragem Thony</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Assistente de TI
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    março de 2014 - março de 2015 (1 ano 1 mês)
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Tecnologias que tive contato: HTML, CSS, Javascript, Jquery,
+                    MySQL, PHP, Opencart na versão 1.5.x, Migração para Magento.
+                  </p>
+                </article>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <GraduationCap className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+                <CardTitle>Formação</CardTitle>
+              </div>
+              <CardDescription>Escolaridade formal e técnica.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4 text-slate-700 dark:text-slate-300">
+              <div className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                <h3 className="font-semibold">UniRitter</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Bacharelado em Ciência da Computação (2015 - 2021)
+                </p>
+              </div>
+              <div className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                <h3 className="font-semibold">Alcides Maya Tecnologia</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Técnico em Informática (2013 - 2014)
+                </p>
+              </div>
+              <div className="space-y-3 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/80">
+                <h3 className="font-semibold">Micros & Methodos Informática</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Técnico em Informática (2011 - 2012)
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+        <footer className="mt-12 rounded-[2rem] border border-slate-200 bg-white/90 p-8 text-slate-700 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-300">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              © 2025 — Perfil Profissional de Thomas Soares
             </p>
-            <p>
-              Dentro de um time ágil, sigo rotinas Scrum que incluem reuniões
-              diárias, planejamento de sprint, revisão e retrospectiva. Colaboro
-              para garantir que os requisitos do usuário sejam atendidos em cada
-              iteração.
+            <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+              Disponível para novos projetos e colaborações.
             </p>
-            <p>
-              Com mais de 12 anos de experiência, desenvolvo interfaces com foco
-              em React e trabalho em equipes multidisciplinares para entregar
-              produtos de forma ágil e eficiente. 🚀
-            </p>
-          </section>
-
-          <section>
-            <h2>Experiência</h2>
-
-            <article>
-              <h3>
-                Nexperti — Desenvolvedor Frontend Senior | React.js | Next.js |
-                NestJS | TypeScript
-              </h3>
-              <p>
-                <strong>novembro de 2024 - até o momento</strong>
-              </p>
-              <p>
-                Atuação como Desenvolvedor Frontend Sênior em um sistema
-                financeiro multi-tenant para gestão e controle de notas fiscais,
-                atendendo múltiplos clientes corporativos.
-              </p>
-              <p>
-                Responsável pela arquitetura, desenvolvimento e evolução do
-                frontend utilizando React, Next.js e TypeScript, com integração
-                a NestJS e Protheus (TOTVS).
-              </p>
-              <p>
-                Criação de Design System próprio com Storybook, padronização de
-                componentes reutilizáveis e foco em acessibilidade e
-                escalabilidade.
-              </p>
-              <p>
-                Implementação de testes unitários, integração e E2E, além de
-                práticas de observabilidade, monitoramento e rastreamento de
-                erros.
-              </p>
-              <p>
-                Otimizações contínuas de performance e Web Core Vitals (code
-                splitting, lazy loading, cache estratégico), garantindo alta
-                confiabilidade e experiência do usuário em ambiente crítico de
-                negócio.
-              </p>
-            </article>
-
-            <article>
-              <h3>Leega — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>outubro de 2024 - novembro de 2025</strong>
-              </p>
-              <p>
-                Atuei em um projeto do setor financeiro, migrando uma aplicação
-                de internet banking originalmente em Flutter Web. Também
-                desenvolvemos o Design System baseado no Figma. O sistema foi
-                reescrito com React, Vite, Tailwind CSS, Zustand, Storybook,
-                Jest, TanStack Query, ESLint e Prettier.
-              </p>
-            </article>
-
-            <article>
-              <h3>IBM — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>maio de 2023 - setembro de 2024</strong>
-              </p>
-              <p>
-                Outsourcing para cliente de petróleo e gás, atuando na migração
-                de um sistema legado em ASP para Angular. Utilização de Angular
-                Material, back-end em .NET e Oracle com Dapper e Entity
-                Framework. Paralelamente, estudei mais React e Next.js, minhas
-                principais especialidades.
-              </p>
-            </article>
-
-            <article>
-              <h3>CI&T — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>julho de 2022 - maio de 2023</strong>
-              </p>
-              <p>
-                Outsourcing para cliente do ramo farmacêutico, trabalhando em
-                e-commerce feito em Next.js e em apps das marcas utilizando
-                React Native. Tecnologias: Typescript, React, Next.js, React
-                Native, GraphQL, Node.js, Redux, Styled Components, Jest etc.
-              </p>
-            </article>
-
-            <article>
-              <h3>americanas s.a. — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>abril de 2021 - julho de 2022</strong>
-              </p>
-              <p>
-                Atuação na marca Americanas Empresas, desenvolvendo novas
-                features e modernizando soluções do e-commerce usando
-                Typescript, React, Next.js, Node.js, Redux, Styled Components,
-                Jest, GraphQL.
-              </p>
-            </article>
-
-            <article>
-              <h3>Huia — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>agosto de 2018 - abril de 2021</strong>
-              </p>
-              <p>
-                Desenvolvimento front-end de plugins para DjangoCMS utilizando
-                metodologias ágeis. Tecnologias: Django, DjangoCMS, SASS, REST,
-                Docker, Git, Gitlab, micro serviços. Projetos anteriores com
-                Drupal 8, Wordpress, Laravel, Lumen, EJS, Jenkins, Gulp, Grunt,
-                NPM, Yarn, HTML, CSS, Javascript, Jquery, MySQL, SQLite, PHP,
-                Python.
-              </p>
-            </article>
-
-            <article>
-              <h3>Zeta Informática Ltda. — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>julho de 2017 - agosto de 2018</strong>
-              </p>
-              <p>
-                Atuei na versão web de um sistema legado desenvolvido em NodeJS
-                e AngularJS. Também trabalhei em um site com indicadores para
-                clientes de ERP em Ruby. Participei brevemente do
-                desenvolvimento de emissão de documentos eletrônicos (MDFE e
-                CTE) via integrador Java.
-              </p>
-            </article>
-
-            <article>
-              <h3>Huia — Desenvolvedor Front-end</h3>
-              <p>
-                <strong>março de 2015 - fevereiro de 2017</strong>
-              </p>
-              <p>
-                Tecnologias utilizadas: HTML, CSS, SASS, LESS, Stylus, Bootstrap
-                3, Foundation, BEM, Javascript, Jquery, Gulp, Grunt, Backbone,
-                PHP, Kohana, Wordpress, C#, .NET, SQL Server, MySQL, Jenkins,
-                Composer, NPM, Bower, Git.
-              </p>
-            </article>
-
-            <article>
-              <h3>Ferragem Thony — Assistente de TI</h3>
-              <p>
-                <strong>março de 2014 - março de 2015</strong>
-              </p>
-              <p>
-                Tecnologias utilizadas: HTML, CSS, Javascript, Jquery, MySQL,
-                PHP, OpenCart 1.5.x e migração para Magento.
-              </p>
-            </article>
-          </section>
-
-          <section>
-            <h2>Formação acadêmica</h2>
-
-            <article>
-              <h3>UniRitter</h3>
-              <p>Bacharelado em Ciência da Computação (2015 - 2021)</p>
-            </article>
-
-            <article>
-              <h3>Alcides Maya Tecnologia</h3>
-              <p>Técnico em Informática (2013 - 2014)</p>
-            </article>
-
-            <article>
-              <h3>Micros & Methodos Informática</h3>
-              <p>Técnico em Informática (2011 - 2012)</p>
-            </article>
-          </section>
-        </main>
-
-        <footer>
-          <p>© 2025 — Perfil Profissional de Thomas Soares</p>
+          </div>
         </footer>
-      </>
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
