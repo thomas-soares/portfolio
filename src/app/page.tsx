@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 pb-16 pt-10 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
-        <section className="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70">
+        <section className="rounded-4xl border border-slate-200 bg-white/90 p-8 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-5">
               <div className="inline-flex flex-wrap items-center gap-3 rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 dark:bg-slate-50 dark:text-slate-950">
@@ -23,8 +23,8 @@ export default function Home() {
                   Thomas Soares
                 </h1>
                 <p className="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
-                  Desenvolvedor front-end com mais de 12 anos de experiência em
-                  React, Next.js e design de sistemas escaláveis. Entrego
+                  Desenvolvedor front-end com mais de 12 anos de experiência.
+                  Especializado em React, Next.js e design de sistemas escaláveis. Entrego
                   interfaces modernas com foco em usabilidade, performance e
                   acessibilidade.
                 </p>
@@ -35,7 +35,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] bg-slate-950/90 px-6 py-8 text-white shadow-xl shadow-slate-950/20 dark:bg-slate-900/95">
+            <div className="rounded-4xl bg-slate-950/90 px-6 py-8 text-white shadow-xl shadow-slate-950/20 dark:bg-slate-900/95">
               <p className="text-sm uppercase tracking-[0.28em] text-slate-400">
                 Especialidades
               </p>
@@ -331,7 +331,7 @@ export default function Home() {
             </CardContent>
           </Card>
         </section>
-        <footer className="mt-12 rounded-[2rem] border border-slate-200 bg-white/90 p-8 text-slate-700 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-300">
+        <footer className="mt-12 rounded-4xl border border-slate-200 bg-white/90 p-8 text-slate-700 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-300">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-slate-600 dark:text-slate-400">
               © 2025 — Perfil Profissional de Thomas Soares
