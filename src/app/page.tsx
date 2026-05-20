@@ -24,9 +24,9 @@ export default function Home() {
                 </h1>
                 <p className="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
                   Desenvolvedor front-end com mais de 12 anos de experiência.
-                  Especializado em React, Next.js e design de sistemas escaláveis. Entrego
-                  interfaces modernas com foco em usabilidade, performance e
-                  acessibilidade.
+                  Especializado em React, Next.js e design de sistemas
+                  escaláveis. Entrego interfaces modernas com foco em
+                  usabilidade, performance e acessibilidade.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -78,7 +78,7 @@ export default function Home() {
                   usuário sejam atendidos em cada iteração.
                 </p>
                 <p>
-                  Em resumo, como desenvolvedor front-end com mais de 11 anos de
+                  Em resumo, como desenvolvedor front-end com mais de 12 anos de
                   experiência, meu trabalho inclui desenvolver interfaces de
                   usuário usando tecnologias como React, trabalhando em
                   colaboração com outros membros do time de desenvolvimento para
