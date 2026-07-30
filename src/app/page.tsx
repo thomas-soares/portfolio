@@ -1,4 +1,11 @@
-import { Briefcase, GraduationCap, Sparkles } from "lucide-react";
+import {
+  Briefcase,
+  Download,
+  Github,
+  GraduationCap,
+  Linkedin,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -30,8 +37,32 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button variant="default">Entrar em contato</Button>
-                <Button variant="secondary">Ver experiência</Button>
+                <a
+                  href="/curriculo-thomas-soares.pdf"
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-950 dark:hover:bg-slate-100"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Baixar currículo</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/thomas-soares-339465a6/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href="https://github.com/thomas-soares"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-transparent px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-slate-100 dark:border-slate-800 dark:text-slate-100 dark:hover:bg-slate-900"
+                >
+                  <Github className="h-4 w-4" />
+                  <span>GitHub</span>
+                </a>
               </div>
             </div>
 
