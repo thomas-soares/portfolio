@@ -15,12 +15,7 @@ import {
 } from "@/components/ui/card";
 import { AnimatedMain } from "@/components/ui/animated-main";
 import { Reveal } from "@/components/ui/reveal";
-import dynamic from "next/dynamic";
-
-const ContactForm = dynamic(() => import("@/components/contact-form"), {
-  ssr: false,
-  loading: () => <div>Loading form...</div>,
-});
+import ContactForm from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -402,7 +397,10 @@ export default function Home() {
           </Reveal>
         </section>
         <footer className="mt-12 rounded-4xl border border-(--border) bg-(--surface)/90 p-8 text-(--muted) shadow-2xl shadow-black/20 backdrop-blur-xl">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="space-y-6">
+            <div>
+              <ContactForm />
+            </div>
             <div>
               <p className="text-sm text-(--muted)">
                 © 2026 — Perfil Profissional de Thomas Soares
@@ -410,9 +408,6 @@ export default function Home() {
               <p className="mt-2 text-sm font-medium text-(--accent-green)">
                 Disponível para novos projetos e colaborações.
               </p>
-            </div>
-            <div>
-              <ContactForm />
             </div>
           </div>
         </footer>

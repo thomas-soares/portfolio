@@ -39,30 +39,6 @@ async function sendViaWhatsAppCloud(
   return res.ok;
 }
 
-async function sendViaTwilio(
-  accountSid: string,
-  authToken: string,
-  from: string,
-  to: string,
-  bodyText: string,
-) {
-  const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
-  const form = new URLSearchParams();
-  form.append("From", from);
-  form.append("To", to);
-  form.append("Body", bodyText);
-
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${Buffer.from(`${accountSid}:${authToken}`).toString("base64")}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: form.toString(),
-  });
-  return res.ok;
-}
-
 export async function POST(req: Request) {
   try {
     const json = await req.json();
@@ -111,27 +87,7 @@ export async function POST(req: Request) {
       results.whatsapp_cloud = false;
     }
 
-    // 3) Twilio WhatsApp (optional)
-    const twilioSid = process.env.TWILIO_ACCOUNT_SID;
-    const twilioToken = process.env.TWILIO_AUTH_TOKEN;
-    const twilioFrom = process.env.TWILIO_WHATSAPP_FROM; // e.g. 'whatsapp:+1415...'
-    const twilioTo = process.env.TWILIO_WHATSAPP_TO; // e.g. 'whatsapp:+55...'
-    if (twilioSid && twilioToken && twilioFrom && twilioTo) {
-      try {
-        const ok = await sendViaTwilio(
-          twilioSid,
-          twilioToken,
-          twilioFrom,
-          twilioTo,
-          `New contact form message from ${name} (${email}): ${message}`,
-        );
-        results.twilio = ok;
-      } catch (err: any) {
-        results.twilio = `error:${err?.message || "unknown"}`;
-      }
-    } else {
-      results.twilio = false;
-    }
+    // Using WhatsApp Cloud API only
 
     return NextResponse.json({ ok: true, results });
   } catch (err: any) {
