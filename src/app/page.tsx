@@ -52,7 +52,7 @@ export default function Home() {
                     <span>Baixar currículo</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/thomas-soares-339465a6/"
+                    href="https://www.linkedin.com/in/thomas-soares-frontend/"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-(--secondary) px-6 py-3 text-sm font-semibold text-(--secondary-foreground) transition-colors hover:bg-(--primary-soft) hover:text-(--primary-hover-foreground)"
