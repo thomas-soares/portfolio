@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, type HTMLMotionProps, type Variants } from "framer-motion";
 
 const defaultVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -14,7 +14,7 @@ type RevealProps = React.PropsWithChildren<
     delay?: number;
     threshold?: number;
     variants?: Variants;
-  } & React.HTMLAttributes<HTMLDivElement>
+  } & Omit<HTMLMotionProps<"div">, "children" | "variants">
 >;
 
 export function Reveal({
@@ -33,7 +33,7 @@ export function Reveal({
       variants={variants}
       transition={{ duration: 0.6, delay }}
       className={className}
-      {...(props as any)}
+      {...props}
     >
       {children}
     </motion.div>
