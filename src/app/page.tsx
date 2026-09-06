@@ -15,16 +15,20 @@ import {
 } from "@/components/ui/card";
 import { AnimatedMain } from "@/components/ui/animated-main";
 import { Reveal } from "@/components/ui/reveal";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 export default function Home() {
   return (
     <AnimatedMain className="min-h-screen bg-background pb-16 pt-10 text-foreground">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+        <div className="flex justify-end">
+          <ThemeSwitch />
+        </div>
         <Reveal>
-          <section className="rounded-4xl border border-(--border) bg-(--surface)/90 p-8 shadow-2xl shadow-black/20 backdrop-blur-xl">
+          <section className="rounded-4xl border border-(--border) bg-(--surface)/95 p-8 shadow-2xl shadow-(color:--shadow-strong) backdrop-blur-xl">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div className="space-y-5">
-                <div className="inline-flex flex-wrap items-center gap-3 rounded-full bg-(--surface-elevated) px-4 py-2 text-sm font-semibold text-(--accent-yellow) shadow-lg shadow-black/20">
+                <div className="inline-flex flex-wrap items-center gap-3 rounded-full bg-(--surface-elevated) px-4 py-2 text-sm font-semibold text-(--primary) shadow-lg shadow-(color:--shadow-soft)">
                   Front-end Senior • Next.js • UI Design
                 </div>
                 <div className="space-y-4">
@@ -42,7 +46,7 @@ export default function Home() {
                   <a
                     href="/curriculo-thomas-soares.pdf"
                     download
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-(--accent-purple) px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-(--accent-pink) hover:text-white"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3 text-sm font-semibold text-(--primary-foreground) transition-colors hover:bg-(--primary-hover) hover:text-(--primary-hover-foreground)"
                   >
                     <Download className="h-4 w-4" />
                     <span>Baixar currículo</span>
@@ -51,7 +55,7 @@ export default function Home() {
                     href="https://www.linkedin.com/in/thomas-soares-339465a6/"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-(--accent-cyan) px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-(--accent-green)"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-(--secondary) px-6 py-3 text-sm font-semibold text-(--secondary-foreground) transition-colors hover:bg-(--primary-soft) hover:text-(--primary-hover-foreground)"
                   >
                     <Linkedin className="h-4 w-4" />
                     <span>LinkedIn</span>
@@ -60,7 +64,7 @@ export default function Home() {
                     href="https://github.com/thomas-soares"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-(--border) bg-(--surface-elevated) px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-(--surface)"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-(--border) bg-(--surface) px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-(--surface-elevated)"
                   >
                     <Github className="h-4 w-4" />
                     <span>GitHub</span>
@@ -68,8 +72,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-4xl border border-(--border) bg-(--surface-elevated) px-6 py-8 text-foreground shadow-xl shadow-black/20">
-                <p className="text-sm uppercase tracking-[0.28em] text-(--accent-green)">
+              <div className="rounded-4xl border border-(--border) bg-(--surface-elevated) px-6 py-8 text-foreground shadow-xl shadow-(color:--shadow-medium)">
+                <p className="text-sm uppercase tracking-[0.28em] text-(--metadata)">
                   Especialidades
                 </p>
                 <div className="mt-6 grid gap-2 text-sm leading-6 text-(--muted)">
@@ -85,10 +89,10 @@ export default function Home() {
         <section className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
           <div className="space-y-6">
             <Reveal>
-              <Card className="border-(--border) bg-(--surface-elevated) text-foreground shadow-xl shadow-black/15">
+              <Card className="border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <Sparkles className="h-5 w-5 text-(--accent-yellow)" />
+                    <Sparkles className="h-5 w-5 text-(--primary)" />
                     <CardTitle>Resumo Profissional</CardTitle>
                   </div>
                   <CardDescription className="text-(--muted)">
@@ -126,10 +130,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal>
-              <Card className="space-y-6 border-(--border) bg-(--surface-elevated) text-foreground shadow-xl shadow-black/15">
+              <Card className="space-y-6 border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <Briefcase className="h-5 w-5 text-(--accent-orange)" />
+                    <Briefcase className="h-5 w-5 text-(--primary-glow)" />
                     <CardTitle>Experiência</CardTitle>
                   </div>
                   <CardDescription className="text-(--muted)">
@@ -140,11 +144,11 @@ export default function Home() {
                   <Reveal delay={0}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">Nexperti</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Frontend Senior | React.js | Next.js |
                         NestJS | TypeScript
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         novembro de 2025 - Present (6 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -179,10 +183,10 @@ export default function Home() {
                   <Reveal delay={0.06}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">Leega</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         outubro de 2024 - novembro de 2025 (1 ano 2 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -202,10 +206,10 @@ export default function Home() {
                   <Reveal delay={0.12}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">IBM</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         maio de 2023 - setembro de 2024 (1 ano 5 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -224,10 +228,10 @@ export default function Home() {
                   <Reveal delay={0.18}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">CI&T</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         julho de 2022 - maio de 2023 (11 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -244,10 +248,10 @@ export default function Home() {
                   <Reveal delay={0.24}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">americanas s.a.</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         abril de 2021 - julho de 2022 (1 ano 4 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -264,10 +268,10 @@ export default function Home() {
                   <Reveal delay={0.3}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">Huia</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         agosto de 2018 - abril de 2021 (2 anos 9 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -297,10 +301,10 @@ export default function Home() {
                       <h3 className="text-lg font-semibold">
                         Zeta Informática Ltda.
                       </h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         julho de 2017 - agosto de 2018 (1 ano 2 meses)
                       </p>
                       <p className="text-(--muted)">
@@ -324,10 +328,10 @@ export default function Home() {
                   <Reveal delay={0.42}>
                     <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                       <h3 className="text-lg font-semibold">Huia</h3>
-                      <p className="text-sm text-(--accent-cyan)">
+                      <p className="text-sm text-(--metadata)">
                         Desenvolvedor Front-end
                       </p>
-                      <p className="text-sm text-(--accent-purple)">
+                      <p className="text-sm text-(--primary-soft)">
                         março de 2015 - fevereiro de 2017 (2 anos)
                       </p>
                       <p className="text-(--muted)">
@@ -342,10 +346,10 @@ export default function Home() {
 
                   <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                     <h3 className="text-lg font-semibold">Ferragem Thony</h3>
-                    <p className="text-sm text-(--accent-cyan)">
+                    <p className="text-sm text-(--metadata)">
                       Assistente de TI
                     </p>
-                    <p className="text-sm text-(--accent-purple)">
+                    <p className="text-sm text-(--primary-soft)">
                       março de 2014 - março de 2015 (1 ano 1 mês)
                     </p>
                     <p className="text-(--muted)">
@@ -360,10 +364,10 @@ export default function Home() {
           </div>
 
           <Reveal>
-            <Card className="border-(--border) bg-(--surface-elevated) text-foreground shadow-xl shadow-black/15">
+            <Card className="border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <GraduationCap className="h-5 w-5 text-(--accent-orange)" />
+                  <GraduationCap className="h-5 w-5 text-(--primary-glow)" />
                   <CardTitle>Formação</CardTitle>
                 </div>
                 <CardDescription className="text-(--muted)">
@@ -373,13 +377,13 @@ export default function Home() {
               <CardContent className="space-y-4 text-(--muted)">
                 <div className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                   <h3 className="font-semibold">UniRitter</h3>
-                  <p className="text-sm text-(--accent-purple)">
+                  <p className="text-sm text-(--primary-soft)">
                     Bacharelado em Ciência da Computação (2015 - 2021)
                   </p>
                 </div>
                 <div className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                   <h3 className="font-semibold">Alcides Maya Tecnologia</h3>
-                  <p className="text-sm text-(--accent-purple)">
+                  <p className="text-sm text-(--primary-soft)">
                     Técnico em Informática (2013 - 2014)
                   </p>
                 </div>
@@ -387,7 +391,7 @@ export default function Home() {
                   <h3 className="font-semibold">
                     Micros & Methodos Informática
                   </h3>
-                  <p className="text-sm text-(--accent-purple)">
+                  <p className="text-sm text-(--primary-soft)">
                     Técnico em Informática (2011 - 2012)
                   </p>
                 </div>
@@ -395,11 +399,11 @@ export default function Home() {
             </Card>
           </Reveal>
         </section>
-        <footer className="mt-12 rounded-4xl border border-(--border) bg-(--surface)/90 p-8 text-(--muted) shadow-2xl shadow-black/20 backdrop-blur-xl">
+        <footer className="mt-12 rounded-4xl border border-(--border) bg-(--surface)/95 p-8 text-(--muted) shadow-2xl shadow-(color:--shadow-strong) backdrop-blur-xl">
           <p className="text-sm text-(--muted)">
             © 2026 — Perfil Profissional de Thomas Soares
           </p>
-          <p className="mt-2 text-sm font-medium text-(--accent-green)">
+          <p className="mt-2 text-sm font-medium text-(--metadata)">
             Disponível para novos projetos e colaborações.
           </p>
         </footer>

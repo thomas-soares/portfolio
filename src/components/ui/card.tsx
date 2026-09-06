@@ -10,7 +10,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-lg shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80",
+        "overflow-hidden rounded-3xl border border-(--border) bg-(--surface)/95 shadow-lg shadow-(color:--shadow-soft) backdrop-blur-xl",
         className,
       )}
       {...props}
@@ -45,7 +45,7 @@ export function CardDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-sm text-slate-500 dark:text-slate-400", className)}
+      className={cn("text-sm text-(--muted)", className)}
       {...props}
     />
   );

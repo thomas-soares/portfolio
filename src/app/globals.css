@@ -7,12 +7,27 @@
   --surface-elevated: #3b3d33;
   --border: #49483e;
   --muted: #b5af96;
-  --accent-cyan: #66d9ef;
-  --accent-green: #a6e22e;
-  --accent-orange: #fd971f;
-  --accent-pink: #f92672;
-  --accent-purple: #ae81ff;
-  --accent-yellow: #e6db74;
+  --primary: #ae81ff;
+  --primary-hover: #f92672;
+  --primary-soft: #ae81ff;
+  --primary-glow: #fd971f;
+  --primary-foreground: #10110e;
+  --primary-hover-foreground: #ffffff;
+  --secondary: #66d9ef;
+  --secondary-foreground: #10110e;
+  --highlight: #f8f8f2;
+  --metadata: #a6e22e;
+  --shadow-soft: rgba(0, 0, 0, 0.15);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-strong: rgba(0, 0, 0, 0.2);
+  --background-effects:
+    radial-gradient(circle at 12% 8%, rgba(249, 38, 114, 0.2), transparent 34%),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(174, 129, 255, 0.22),
+      transparent 32%
+    ),
+    radial-gradient(circle at 50% 0%, rgba(102, 217, 239, 0.1), transparent 42%);
 }
 
 @theme inline {
@@ -23,11 +38,34 @@
   --font-display: var(--font-playfair-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #272822;
-    --foreground: #f8f8f2;
-  }
+:root.light {
+  --background: #f4f9ff;
+  --foreground: #0f2944;
+  --surface: #ffffff;
+  --surface-elevated: #eaf4ff;
+  --border: #b7d6f3;
+  --muted: #526f8e;
+  --primary: #3178c6;
+  --primary-hover: #236fc2;
+  --primary-soft: #4c8fd1;
+  --primary-glow: #6aa7e6;
+  --primary-foreground: #ffffff;
+  --primary-hover-foreground: #ffffff;
+  --secondary: #d9ecff;
+  --secondary-foreground: #236fc2;
+  --highlight: #ffffff;
+  --metadata: #236fc2;
+  --shadow-soft: rgba(49, 120, 198, 0.12);
+  --shadow-medium: rgba(49, 120, 198, 0.14);
+  --shadow-strong: rgba(49, 120, 198, 0.16);
+  --background-effects:
+    radial-gradient(circle at 12% 8%, rgba(49, 120, 198, 0.18), transparent 34%),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(217, 236, 255, 0.72),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f4f9ff 42%, #eaf4ff 100%);
 }
 
 body {
@@ -35,14 +73,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), sans-serif;
-  background-image:
-    radial-gradient(circle at 12% 8%, rgba(249, 38, 114, 0.2), transparent 34%),
-    radial-gradient(
-      circle at 88% 82%,
-      rgba(174, 129, 255, 0.22),
-      transparent 32%
-    ),
-    radial-gradient(circle at 50% 0%, rgba(102, 217, 239, 0.1), transparent 42%);
+  background-image: var(--background-effects);
 }
 
 * {
@@ -50,6 +81,6 @@ body {
 }
 
 ::selection {
-  background: rgba(166, 226, 46, 0.35);
-  color: #10110e;
+  background: rgba(49, 120, 198, 0.45);
+  color: #ffffff;
 }

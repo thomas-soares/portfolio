@@ -28,6 +28,14 @@ export const metadata: Metadata = {
   description: "Perfil profissional de Thomas Soares",
 };
 
+const themeScript = `
+(() => {
+  const theme = localStorage.getItem("theme") || "dark";
+  document.documentElement.classList.toggle("light", theme === "light");
+  document.documentElement.classList.toggle("dark", theme !== "light");
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,9 +44,11 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {children}
         <Analytics />
         <SpeedInsights />

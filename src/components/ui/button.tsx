@@ -2,21 +2,20 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-const MotionButton = motion.button as unknown as React.ComponentType<any>;
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary-glow) focus-visible:ring-offset-2 focus-visible:ring-offset-(--background) disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-slate-950 text-white hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-950 dark:hover:bg-slate-100",
+          "bg-(--primary) text-(--primary-foreground) hover:bg-(--primary-hover) hover:text-(--primary-hover-foreground)",
         secondary:
-          "bg-slate-100 text-slate-950 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700",
+          "bg-(--secondary) text-(--secondary-foreground) hover:bg-(--primary-soft) hover:text-(--primary-hover-foreground)",
         outline:
-          "border border-slate-200 bg-transparent text-slate-950 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-100 dark:hover:bg-slate-900",
+          "border border-(--border) bg-transparent text-(--foreground) hover:bg-(--surface)",
       },
       size: {
         default: "h-11 px-6",
@@ -33,13 +32,13 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    React.ComponentPropsWithoutRef<typeof motion.button>,
     VariantProps<typeof buttonVariants> {}
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
-      <MotionButton
+      <motion.button
         ref={ref}
         className={cn(buttonVariants({ variant, size, className }))}
         whileHover={{ scale: 1.04 }}
