@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
-import "./globals.css";
+import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getDictionary } from "@/i18n/dictionaries";
+import { isLocale, locales } from "@/i18n/config";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,14 +23,6 @@ const playfairDisplay = Playfair_Display({
   weight: ["600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Home | Thomas Soares",
-    template: "%s | Thomas Soares",
-  },
-  description: "Perfil profissional de Thomas Soares",
-};
-
 const themeScript = `
 (() => {
   const theme = localStorage.getItem("theme") || "dark";
@@ -36,14 +31,48 @@ const themeScript = `
 })();
 `;
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  if (!isLocale(lang)) {
+    return {};
+  }
+
+  const dict = getDictionary(lang);
+
+  return {
+    title: {
+      default: dict.metadata.title,
+      template: "%s | Thomas Soares",
+    },
+    description: dict.metadata.description,
+  };
+}
+
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
+
+  if (!isLocale(lang)) {
+    notFound();
+  }
+
   return (
     <html
-      lang="pt-BR"
+      lang={lang}
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >

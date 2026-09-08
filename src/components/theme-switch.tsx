@@ -6,13 +6,17 @@ import { Switch } from "@/components/ui/switch";
 
 type Theme = "dark" | "light";
 
+type ThemeSwitchProps = {
+  label?: string;
+};
+
 function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle("light", theme === "light");
   document.documentElement.classList.toggle("dark", theme === "dark");
   localStorage.setItem("theme", theme);
 }
 
-export function ThemeSwitch() {
+export function ThemeSwitch({ label = "Alternar tema" }: ThemeSwitchProps) {
   const [theme, setTheme] = React.useState<Theme>(() => {
     if (typeof window === "undefined") {
       return "dark";
@@ -35,7 +39,7 @@ export function ThemeSwitch() {
       />
       <Switch
         checked={isLight}
-        aria-label="Alternar tema"
+        aria-label={label}
         onCheckedChange={(checked) => {
           setTheme(checked ? "light" : "dark");
         }}
