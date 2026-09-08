@@ -17,7 +17,7 @@ const ptBR = {
     summary:
       "Desenvolvedor front-end com mais de 12 anos de experiência. Especializado em React, Next.js e design de sistemas escaláveis. Entrego interfaces modernas com foco em usabilidade, performance e acessibilidade.",
     resume: "Baixar currículo",
-    resumeHref: "/curriculo-thomas-soares.pdf",
+    resumeHref: "/thomas-soares-resume.pdf",
     specialtiesTitle: "Especialidades",
     specialties: [
       "React • Next.js • TypeScript",
