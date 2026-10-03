@@ -14,8 +14,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { AnimatedMain } from "@/components/ui/animated-main";
-import { Reveal } from "@/components/ui/reveal";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { LanguageSwitch } from "@/components/language-switch";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -35,7 +33,7 @@ export default async function Home({
   const dict = getDictionary(lang);
 
   return (
-    <AnimatedMain className="min-h-screen bg-background pb-16 pt-10 text-foreground">
+    <main className="min-h-screen bg-background pb-16 pt-10 text-foreground">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
         <div className="flex flex-wrap justify-end gap-3">
           <LanguageSwitch
@@ -44,8 +42,7 @@ export default async function Home({
           />
           <ThemeSwitch label={dict.theme.toggleLabel} />
         </div>
-        <Reveal>
-          <section className="rounded-4xl border border-(--border) bg-(--surface)/95 p-8 shadow-2xl shadow-(color:--shadow-strong) backdrop-blur-xl">
+        <section className="rounded-4xl border border-(--border) bg-(--surface)/95 p-8 shadow-2xl shadow-(color:--shadow-strong) backdrop-blur-xl">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div className="space-y-5">
                 <div className="inline-flex flex-wrap items-center gap-3 rounded-full bg-(--surface-elevated) px-4 py-2 text-sm font-semibold text-(--primary) shadow-lg shadow-(color:--shadow-soft)">
@@ -100,13 +97,11 @@ export default async function Home({
                 </div>
               </div>
             </div>
-          </section>
-        </Reveal>
+        </section>
 
         <section className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
           <div className="space-y-6">
-            <Reveal>
-              <Card className="border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
+            <Card className="border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <Sparkles className="h-5 w-5 text-(--primary)" />
@@ -121,11 +116,9 @@ export default async function Home({
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </CardContent>
-              </Card>
-            </Reveal>
+            </Card>
 
-            <Reveal>
-              <Card className="space-y-6 border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
+            <Card className="space-y-6 border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <Briefcase className="h-5 w-5 text-(--primary-glow)" />
@@ -136,7 +129,7 @@ export default async function Home({
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-5">
-                  {dict.experience.map((item, index) => {
+                  {dict.experience.map((item) => {
                     const content = (
                       <article className="space-y-3 rounded-3xl border border-(--border) bg-(--surface) p-5">
                         <h3 className="text-lg font-semibold">
@@ -156,26 +149,13 @@ export default async function Home({
                       </article>
                     );
 
-                    if (index === dict.experience.length - 1) {
-                      return <div key={`${item.company}-${item.period}`}>{content}</div>;
-                    }
-
-                    return (
-                      <Reveal
-                        key={`${item.company}-${item.period}`}
-                        delay={index * 0.06}
-                      >
-                        {content}
-                      </Reveal>
-                    );
+                    return <div key={`${item.company}-${item.period}`}>{content}</div>;
                   })}
                 </CardContent>
               </Card>
-            </Reveal>
           </div>
 
-          <Reveal>
-            <Card className="border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
+          <Card className="border-(--border) bg-(--surface) text-foreground shadow-xl shadow-(color:--shadow-medium)">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <GraduationCap className="h-5 w-5 text-(--primary-glow)" />
@@ -198,8 +178,7 @@ export default async function Home({
                   </div>
                 ))}
               </CardContent>
-            </Card>
-          </Reveal>
+          </Card>
         </section>
         <footer className="mt-12 rounded-4xl border border-(--border) bg-(--surface)/95 p-8 text-(--muted) shadow-2xl shadow-(color:--shadow-strong) backdrop-blur-xl">
           <p className="text-sm text-(--muted)">{dict.footer.copyright}</p>
@@ -208,6 +187,6 @@ export default async function Home({
           </p>
         </footer>
       </div>
-    </AnimatedMain>
+    </main>
   );
 }
