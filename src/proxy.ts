@@ -1,34 +1,23 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, isLocale, localeCookieName, locales } from "@/i18n/config";
-
-function detectLocale(request: NextRequest) {
-  const cookieLocale = request.cookies.get(localeCookieName)?.value;
-
-  if (cookieLocale && isLocale(cookieLocale)) {
-    return cookieLocale;
-  }
-
-  const acceptLanguage = request.headers.get("accept-language") ?? "";
-  const preferredLanguages = acceptLanguage
-    .split(",")
-    .map((entry) => entry.split(";")[0]?.trim().toLowerCase())
-    .filter(Boolean);
-
-  for (const language of preferredLanguages) {
-    if (language === "pt-br" || language.startsWith("pt")) {
-      return "pt-BR";
-    }
-
-    if (language === "en" || language.startsWith("en-")) {
-      return "en";
-    }
-  }
-
-  return defaultLocale;
-}
+import { defaultLocale, locales } from "@/i18n/config";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (pathname === "/") {
+    const rewriteUrl = request.nextUrl.clone();
+    rewriteUrl.pathname = `/${defaultLocale}`;
+
+    return NextResponse.rewrite(rewriteUrl);
+  }
+
+  if (pathname === `/${defaultLocale}`) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = "/";
+
+    return NextResponse.redirect(redirectUrl, 308);
+  }
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
@@ -37,10 +26,7 @@ export function proxy(request: NextRequest) {
     return;
   }
 
-  const locale = detectLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
-
-  return NextResponse.redirect(request.nextUrl);
+  return NextResponse.next();
 }
 
 export const config = {

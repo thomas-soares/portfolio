@@ -18,13 +18,16 @@ type LanguageSwitchProps = {
 function getLocalizedPath(pathname: string, locale: Locale) {
   const segments = pathname.split("/");
   const currentLocale = segments[1];
+  const hasLocale = locales.includes(currentLocale as Locale);
+  const basePath = hasLocale
+    ? `/${segments.slice(2).join("/")}`.replace(/\/$/, "")
+    : pathname;
 
-  if (locales.includes(currentLocale as Locale)) {
-    segments[1] = locale;
-    return segments.join("/") || `/${locale}`;
+  if (locale === "pt-BR") {
+    return basePath || "/";
   }
 
-  return `/${locale}${pathname === "/" ? "" : pathname}`;
+  return `/${locale}${basePath === "/" ? "" : basePath}`;
 }
 
 export function LanguageSwitch({ currentLocale, label }: LanguageSwitchProps) {
