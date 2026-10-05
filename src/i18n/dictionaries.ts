@@ -43,6 +43,16 @@ const ptBR = {
       title: "Formação",
       description: "Escolaridade formal e técnica.",
     },
+    github: {
+      title: "Código em movimento",
+      description: "Atividade recente e projetos em destaque no GitHub.",
+      commitsTitle: "Commits recentes",
+      recentRepositoriesTitle: "Repos recentes",
+      repositoriesTitle: "Projetos pinados",
+      empty: "Nenhuma atividade pública recente.",
+      viewOnGitHub: "Ver no GitHub",
+      stars: "estrelas",
+    },
   },
   experience: [
     {
@@ -187,6 +197,16 @@ const en = {
     education: {
       title: "Education",
       description: "Formal and technical education.",
+    },
+    github: {
+      title: "Code in motion",
+      description: "Recent activity and featured projects on GitHub.",
+      commitsTitle: "Recent commits",
+      recentRepositoriesTitle: "Recent repos",
+      repositoriesTitle: "Pinned projects",
+      empty: "No recent public activity.",
+      viewOnGitHub: "View on GitHub",
+      stars: "stars",
     },
   },
   experience: [

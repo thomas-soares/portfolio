@@ -16,6 +16,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## GitHub integration
+
+The portfolio loads recent commits and pinned repositories from GitHub on the server and revalidates the data every hour.
+
+Create a `.env.local` file with a GitHub token to enable the pinned repositories query:
+
+```env
+GITHUB_USERNAME=thomas-soares
+GITHUB_TOKEN=your_github_token
+```
+
+The token is used only on the server and should have read-only access to the public data required by the GitHub API.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
